@@ -1,0 +1,49 @@
+const mongoose=require("mongoose");
+
+const userSchema=new mongoose.Schema({
+    firstName:{
+        type:String,
+        require:true,
+    },
+    lastName:{
+        type:String,
+        required:true,
+    },
+    email:{
+        type:String,
+        required:true,
+    },
+    passWord:{
+        type:String,
+        required:true,
+    },
+    profilePicture:{
+        type:String,
+        require:true,
+    },
+    phoneNumber:{
+        type:Number,
+        required:true,
+    },
+    resetPasswordToken:{
+        type:String,
+    },
+    resetPasswordExpire:{
+        type:Date,
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now(),
+    },
+    about:{
+        type:String,
+    },
+    DOB:{
+        type:Date,
+    },
+    gender:{
+        type:String,
+    }
+})
+
+module.exports=mongoose.model("User",userSchema);
