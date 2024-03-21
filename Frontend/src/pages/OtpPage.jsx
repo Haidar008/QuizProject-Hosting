@@ -6,11 +6,12 @@ import Loader from "../components/Loader";
 import { BsArrowLeft } from "react-icons/bs";
 import SignUp from "../services/operations/signUp";
 import Navbar from "../components/Navbar";
+import OtpInput from 'react-otp-input';
 
 
 
 const OTPInputPage = () => {
-  const [otp, setOTP] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState('');
   const navigate = useNavigate();
   const dispatch=useDispatch();
   const signUpdata=useSelector((state)=>state.auth.signUpdata);
@@ -26,12 +27,7 @@ const OTPInputPage = () => {
   body.append("confirmPassword",signUpdata.confirmPassword);
 
 
-  const handleChange = (index, value) => {
-    const newOTP = [...otp];
-    newOTP[index] = value;
-    setOTP(newOTP);
-  };
-
+  
 
   //Resend OTP
   const handleResend = async() => {
@@ -39,24 +35,15 @@ const OTPInputPage = () => {
   };
 
   const verifyEmail = async() => {
-
-      for(let i=0;i<otp.length;i++){
-        if(otp[i] === ""){
-          alert("All fields are required");
-          return;
-        }
+      if(otp.length !== 6){
+        alert("All fields are required");
+        return;
       }
-
-      let str="";
-      for(let i=0;i<otp.length;i++){
-        str+=otp[i];
-      }
-      console.log("OTP=",str);
-      body.append("otp",str);
-      console.log(body);
+      body.append("otp",otp);
+      console.log(otp);
 
       await SignUp(body,navigate,dispatch);
-      setOTP(["","","","","",""]);
+      setOtp('');
   };
 
   const handleClick = () => {
@@ -85,18 +72,14 @@ const OTPInputPage = () => {
         </div>
       </div>
       <div className="flex justify-center mb-6">
-        {otp.map((digit, index) => (
-          <input
-            key={index}
-            type="text"
-            maxLength="1"
-            required
-            value={digit}
-            onChange={(e) => handleChange(index, e.target.value)}
-            className="lg:w-12 lg:h-12 w-8 h-8 border rounded-md text-center mr-2"
-            placeholder="_"
+          <OtpInput
+            value={otp}
+            onChange={setOtp}
+            numInputs={6}
+            containerStyle="flex gap-3"
+            renderInput={(props) => <input {...props}/>}
           />
-        ))}
+
       </div>
       <div className="flex flex-col sm:flex-row justify-center mb-6">
         <button

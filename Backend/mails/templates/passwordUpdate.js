@@ -55,7 +55,7 @@ const updatePassword = (email, name) => {
     
     <body>
         <div class="container">
-            <a href="https://studynotion-edtech-project.vercel.app"><img class="logo"
+            <a href="#"><img class="logo"
                     src="https://res.cloudinary.com/darjclpew/image/upload/v1710719532/Quiz/pueuts3hywmiiezepvpm.jpg" alt="QuizWebsite Logo"></a>
             <div class="message">Password Update Confirmation</div>
             <div class="body">

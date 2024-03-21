@@ -21,10 +21,14 @@ app.use(cors({
 }))
 
 app.listen(process.env.PORT,()=>{
-    console.log("App is running successfully");
+    console.log("App is running successfully at",process.env.PORT);
 })
 
 app.use("/api/v1",UserRoute);
+
+app.get("/",(req,res)=>{
+    res.send("Server Started Running")
+})
 
 connectDatabase();
 cloudinaryConfig();
