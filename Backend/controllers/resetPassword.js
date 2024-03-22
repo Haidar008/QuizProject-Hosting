@@ -30,7 +30,7 @@ async function sendResetToken(req,res){
 
         const resetToken=crypto.randomBytes(20).toString("hex");
 
-        const resetLink=`http://localhost:3000/resetPassword/token/${resetToken}`;
+        const resetLink=`https://quiz-project-frontend-jz70trx3d-md-haidar-parwezs-projects.vercel.app/resetPassword/token/${resetToken}`;
         const expiryTime=Date.now()+5*60*1000;
         console.log(expiryTime)
 
