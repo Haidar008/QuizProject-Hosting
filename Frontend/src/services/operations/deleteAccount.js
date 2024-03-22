@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 async function deleteAccount(body,navigate,dispatch){
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/deleteAccount";
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/deleteAccount";
     try{
         const response=await apiConnector("DELETE",url,null,null,body);
         console.log(response);

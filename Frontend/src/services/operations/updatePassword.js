@@ -5,7 +5,7 @@ import {toast} from "react-hot-toast"
 //change Password
 export const updatePassword= async(body,navigate,dispatch)=>{
         dispatch(setLoading(true));
-        const url="http://localhost:4000/api/v1/user/updatePassword";
+        const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/updatePassword";
         try{
             const response=await apiConnector("PUT",url,null,null,body);
             console.log(response);
@@ -23,7 +23,7 @@ export const updatePassword= async(body,navigate,dispatch)=>{
 //change Profile Picture
 export const changeProfilePicture= async(body,navigate,dispatch)=>{
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/updatePicture";
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/updatePicture";
     const headers={
         "content-type":"multipart/form-data",
     }
@@ -45,7 +45,7 @@ export const changeProfilePicture= async(body,navigate,dispatch)=>{
 //Update Profile Details
 export const updateProfile= async(body,navigate,dispatch)=>{
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/updateProfile";
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/updateProfile";
     try{
         const response=await apiConnector("PUT",url,null,null,body);
         console.log(response);

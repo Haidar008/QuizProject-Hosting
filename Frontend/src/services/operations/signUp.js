@@ -4,7 +4,7 @@ import apiConnector from "../apiconnector";
 
 async function SignUp(body,navigate,dispatch){
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/signUp"
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/signUp"
     try{
         const response=await apiConnector("POST",url,null,null,body);
         navigate("/login");

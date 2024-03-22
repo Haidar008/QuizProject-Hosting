@@ -5,7 +5,7 @@ import {setMyQuizs} from "../../slices/quizSlice";
 
 export const submitQuiz = async (body,dispatch) => {
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/submitQuiz";
+    const url="https://quizproject-hosting-1.onrender.com/api/v1/user/submitQuiz";
     try{
         const response=await apiConnector("POST",url,null,null,body);
         console.log(response);
@@ -23,7 +23,7 @@ export const getAllQuizes=async(params,navigate,dispatch)=>{
 
     
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/getAllQuizes";
+    const url="https://quizproject-hosting-1.onrender.com/api/v1/user/getAllQuizes";
     try{
         const response=await apiConnector("GET",url,null,params,null);
         dispatch(setMyQuizs(response.data.data));

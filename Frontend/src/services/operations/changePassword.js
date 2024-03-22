@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 async function changePassword(body,navigate,dispatch){
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/changePassword";
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/changePassword";
     try{
         const resposne=await apitConnector("PUT",url,null,null,body);
         console.log(resposne);

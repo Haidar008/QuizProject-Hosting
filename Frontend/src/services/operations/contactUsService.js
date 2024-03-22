@@ -5,7 +5,7 @@ import {setLoading} from "../../slices/authSlice";
 
 async function contactUs(body,dispatch){
     dispatch(setLoading(true));
-    const url="http://localhost:4000/api/v1/user/contactUs";
+    const url=" https://quizproject-hosting-1.onrender.com/api/v1/user/contactUs";
     try{
         const response=await apiConnector("POST",url,null,null,body);
         console.log(response);
