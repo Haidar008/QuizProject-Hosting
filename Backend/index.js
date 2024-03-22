@@ -17,7 +17,8 @@ app.use(fileUpload({
 }));
 
 app.use(cors({
-    origin:"*"
+    origin:"*",
+    credentials:true,
 }))
 
 app.listen(process.env.PORT,()=>{
