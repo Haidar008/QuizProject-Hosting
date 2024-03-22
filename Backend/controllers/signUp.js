@@ -81,7 +81,7 @@ async function signUp(req,res){
         return res.status(400).json({
             success:false,
             message:"Something went wrong,try again",
-            error:error,
+            error:error.message,
         })
     }
 }

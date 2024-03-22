@@ -2,8 +2,8 @@ const express=require("express");
 const app=express();
 require("dotenv").config()
 const UserRoute=require("./routes/userRoutes");
-const connectDatabase=require("./config/database");
-const cloudinaryConfig=require("./config/cloudinary");
+const database = require("./config/database");
+const {cloudinaryConfig}=require("./config/cloudinary");
 const cookieParser=require("cookie-parser");
 const fileUpload=require("express-fileupload");
 const cors=require("cors");
@@ -30,5 +30,5 @@ app.get("/",(req,res)=>{
     res.send("Server Started Running")
 })
 
-connectDatabase();
+database.connect();
 cloudinaryConfig();
