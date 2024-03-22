@@ -7,7 +7,7 @@ async function generateOTP(req,res){
     try{
         
         const {email}=req.body;
-        console.log("server email",email);
+        console.log("email",email);
 
 
 
