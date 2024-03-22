@@ -17,7 +17,7 @@ app.use(fileUpload({
 }));
 
 app.use(cors({
-    origin:"https://quiz-project-frontend-ednd1zh88-md-haidar-parwezs-projects.vercel.app"
+    origin:"*"
 }))
 
 app.listen(process.env.PORT,()=>{
