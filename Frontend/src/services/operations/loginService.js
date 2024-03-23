@@ -9,8 +9,8 @@ async function loginservice(body,navigate,dispatch){
         console.log(body);
         const response=await apiConnector("POST",url,null,null,body);
         console.log(response);
-        dispatch(setToken(response.data.token));
-        dispatch(setUserData(response.data.user))
+        await dispatch(setToken(response.data.token));
+        await dispatch(setUserData(response.data.user))
         navigate("/quiz");
         toast.success("Login Successfull")
     }
