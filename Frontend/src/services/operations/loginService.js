@@ -11,7 +11,7 @@ async function loginservice(body,navigate,dispatch){
         console.log(response);
         dispatch(setToken(response.data.token));
         dispatch(setUserData(response.data.user))
-        navigate("/");
+        navigate("/quiz");
         toast.success("Login Successfull")
     }
     catch(error){
